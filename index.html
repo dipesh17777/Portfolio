@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -19,28 +21,47 @@
     <!-- Header Navigation -->
     <header class="header">
         <div class="container header-container">
-            <a href="#" class="logo">DP<span>.</span></a>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#contact" class="btn btn-outline nav-cta">Contact</a></li>
-                </ul>
+            <a href="#" class="logo">DP</a>
+            <div class="nav-wrapper">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#experience" class="nav-link">Experience</a></li>
+                        <li><a href="#contact" class="btn btn-outline nav-cta">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="theme-controls">
+                    <div class="accent-picker" id="accentPicker">
+                        <button class="accent-dot active" data-accent="124, 58, 237"
+                            style="--accent-dot-color: #7c3aed;" title="Violet"></button>
+                        <button class="accent-dot" data-accent="6, 182, 212" style="--accent-dot-color: #06b6d4;"
+                            title="Cyan"></button>
+                        <button class="accent-dot" data-accent="236, 72, 153" style="--accent-dot-color: #ec4899;"
+                            title="Pink"></button>
+                        <button class="accent-dot" data-accent="245, 158, 11" style="--accent-dot-color: #f59e0b;"
+                            title="Amber"></button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle theme">
+                        <i data-lucide="moon" class="theme-icon-dark"></i>
+                        <i data-lucide="sun" class="theme-icon-light"></i>
+                    </button>
+                </div>
                 <button class="mobile-menu-btn">
                     <i data-lucide="menu"></i>
                 </button>
-            </nav>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero">
+            <div class="hero-glow" id="heroGlow"></div>
             <div class="container hero-container">
                 <div class="hero-content">
-                    <span class="badge">Fresher</span>
+                    <span class="badge">THIS IS</span>
                     <h1 class="hero-title">Dipesh Payer</h1>
                     <h2 class="hero-subtitle">Graphic Designer</h2>
                     <p class="hero-tagline">“Elevating brands through refined, intentional design”</p>
@@ -51,7 +72,7 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-image-backdrop"></div>
-                    <img src="assets/images/profile_avatar_1776596360255.png" alt="Dipesh Payer" class="hero-image">
+                    <img src="assets\images/176.jpeg" alt="Dipesh Payer" class="hero-image">
                 </div>
             </div>
         </section>
@@ -112,10 +133,10 @@
                         <ul class="skill-list">
                             <li>Poster Design</li>
                             <li>Social Media Graphics</li>
+                            <li>Acrylic Signage board Design</li>
                             <li>Jersey Design</li>
                             <li>Layout Design</li>
                             <li>Brochure Design</li>
-                            <li>Flyer Design</li>
                             <li>Brand Identity</li>
                         </ul>
                     </div>
@@ -144,43 +165,54 @@
                     <p class="section-subtitle">Practice Designs – Posters, Jersey Designs & Brochure</p>
                 </div>
 
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Work</button>
+                    <button class="filter-btn" data-filter="posters">Posters</button>
+                    <button class="filter-btn" data-filter="jerseys">Jerseys</button>
+                    <button class="filter-btn" data-filter="brochures">Brochures</button>
+                </div>
+
                 <div class="portfolio-grid">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card" data-category="posters" data-id="1">
                         <div class="portfolio-img-wrapper">
-                            <img src="assets/images/171.jpg" alt="Poster Design">
+                            <img src="assets/images/171.jpg" alt="Poster Layout">
                             <div class="portfolio-overlay">
                                 <h3>Poster Layout</h3>
                                 <p>CorelDRAW</p>
+                                <span class="view-project-label">View Details <i data-lucide="external-link"></i></span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="portfolio-card">
+                    <div class="portfolio-card" data-category="brochures" data-id="2">
                         <div class="portfolio-img-wrapper">
                             <img src="assets/images/172.jpg" alt="Brochure Design">
                             <div class="portfolio-overlay">
                                 <h3>Brochure Design</h3>
-                                <p>Adobe express & CorelDRAW</p>
+                                <p>Adobe Express & CorelDRAW</p>
+                                <span class="view-project-label">View Details <i data-lucide="external-link"></i></span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="portfolio-card">
+                    <div class="portfolio-card" data-category="jerseys" data-id="3">
                         <div class="portfolio-img-wrapper">
-                            <img src="assets/images/174.jpg" alt="Banner Design">
+                            <img src="assets/images/184.jpg" alt="Jersey Design">
                             <div class="portfolio-overlay">
-                                <h3>Jersey Design</h3>
+                                <h3> Acrylic Signage boards</h3>
                                 <p>CorelDRAW & Photoshop</p>
+                                <span class="view-project-label">View Details <i data-lucide="external-link"></i></span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="portfolio-card">
+                    <div class="portfolio-card" data-category="posters" data-id="4">
                         <div class="portfolio-img-wrapper">
-                            <img src="assets/images/175.jpg" alt="Brand Identity">
+                            <img src="assets/images/175.jpg" alt="Poster Design">
                             <div class="portfolio-overlay">
                                 <h3>Poster Design</h3>
                                 <p>CorelDRAW & Photoshop</p>
+                                <span class="view-project-label">View Details <i data-lucide="external-link"></i></span>
                             </div>
                         </div>
                     </div>
@@ -300,6 +332,46 @@
             <p>&copy; 2026 Dipesh Payer. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Project Lightbox Modal -->
+    <div class="modal" id="projectModal" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-media">
+                    <img id="modalImage" src="" alt="Project Image">
+                </div>
+                <div class="modal-details">
+                    <div class="modal-header-info">
+                        <span class="modal-category" id="modalCategory">Category</span>
+                        <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalDescription">Detailed description of the graphic design work, layout design
+                            decisions, and tools used to create it.</p>
+                        <div class="modal-meta-grid">
+                            <div class="meta-item">
+                                <span class="meta-label">Software Used</span>
+                                <div class="meta-tags" id="modalTools">
+                                    <!-- Dynamic tags -->
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Focus Area</span>
+                                <span class="meta-value" id="modalFocus">Visual Balance & Typography</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <script src="script.js"></script>
     <script>
